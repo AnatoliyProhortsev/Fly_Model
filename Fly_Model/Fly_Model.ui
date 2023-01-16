@@ -11,31 +11,21 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Бросок под углом к горизонту</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>10</y>
-      <width>841</width>
-      <height>541</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>0</y>
       <width>451</width>
-      <height>551</height>
+      <height>556</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,3">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,0,3,0">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
        <property name="spacing">
         <number>6</number>
        </property>
@@ -56,7 +46,7 @@
            <item>
             <widget class="QLineEdit" name="Gravity_edit">
              <property name="text">
-              <string>9,8</string>
+              <string>9.8</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -165,50 +155,6 @@
                </item>
               </layout>
              </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_7">
-               <item>
-                <widget class="QLabel" name="label_9">
-                 <property name="text">
-                  <string>Шаг оси Х</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="X_axis_step_edit">
-                 <property name="text">
-                  <string>5</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_10">
-                 <property name="text">
-                  <string>Шаг оси Y</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="Y_axis_step_edit">
-                 <property name="text">
-                  <string>3</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
             </layout>
            </item>
           </layout>
@@ -237,6 +183,13 @@
           </widget>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -280,28 +233,40 @@
           </widget>
          </item>
          <item>
+          <widget class="Line" name="line_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="Get_info_button">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>Информация о полёте</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="Draw_axis_button">
-           <property name="text">
-            <string>Построить оси</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="Clear_button">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
-            <string>Очистить</string>
+            <string>Удалить график</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="Draw_graph_button">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="whatsThis">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавляет график в соответствии с указанными данными&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
            <property name="text">
             <string>Построить график</string>
            </property>
@@ -310,6 +275,13 @@
         </layout>
        </item>
       </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -347,6 +319,13 @@
         </widget>
        </item>
        <item>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLabel" name="label_11">
          <property name="maximumSize">
           <size>
@@ -364,6 +343,9 @@
        </item>
        <item>
         <widget class="QLineEdit" name="Bounce_quoff_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>2</string>
          </property>
@@ -390,6 +372,9 @@
        </item>
        <item>
         <widget class="QLineEdit" name="X_wind_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>0</string>
          </property>
@@ -416,6 +401,9 @@
        </item>
        <item>
         <widget class="QLineEdit" name="Y_wind_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>0</string>
          </property>
@@ -442,6 +430,9 @@
        </item>
        <item>
         <widget class="QLineEdit" name="Ball_radius_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>0,5</string>
          </property>
@@ -468,6 +459,9 @@
        </item>
        <item>
         <widget class="QLineEdit" name="Viscosity_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>90</string>
          </property>
@@ -494,6 +488,9 @@
        </item>
        <item>
         <widget class="QLineEdit" name="Density_edit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>2200</string>
          </property>
@@ -519,7 +516,17 @@
         </spacer>
        </item>
        <item>
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="Start_button">
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Построить график по точкам с учётам времени и/или отскока&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="text">
           <string>Старт</string>
          </property>
@@ -527,6 +534,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="Stop_Button">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>Стоп</string>
          </property>
@@ -534,7 +544,24 @@
        </item>
       </layout>
      </item>
+     <item>
+      <widget class="Line" name="line_6">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </widget>
+   <widget class="QCustomPlot" name="plot_view" native="true">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>10</y>
+      <width>841</width>
+      <height>531</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -561,6 +588,14 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
